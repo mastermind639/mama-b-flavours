@@ -24,6 +24,14 @@ import heroImage from "@/assets/mama-bs-hero.jpg";
 import menuSpread from "@/assets/nigerian-menu-spread.jpg";
 import egusiImage from "@/assets/egusi-pounded-yam.jpg";
 import cateringImage from "@/assets/catering-table.jpg";
+import jollofImage from "@/assets/menu-jollof-rice.jpg";
+import friedRiceImage from "@/assets/menu-fried-rice.jpg";
+import egusiMenuImage from "@/assets/menu-egusi-pounded-yam.jpg";
+import ofadaImage from "@/assets/menu-ofada-rice.jpg";
+import moiMoiImage from "@/assets/menu-moi-moi.jpg";
+import chickenImage from "@/assets/menu-chicken.jpg";
+import beefImage from "@/assets/menu-beef.jpg";
+import fishImage from "@/assets/menu-fish.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,14 +48,14 @@ export const Route = createFileRoute("/")({
 });
 
 const menuItems = [
-  { name: "Jollof Rice", description: "Smoky, richly seasoned party jollof cooked with our signature tomato base.", image: menuSpread, position: "object-[22%_18%]" },
-  { name: "Fried Rice", description: "Fragrant rice tossed with crisp vegetables and savoury Nigerian spices.", image: menuSpread, position: "object-[78%_18%]" },
-  { name: "Pounded Yam & Egusi", description: "Smooth pounded yam with hearty melon-seed soup, greens and tender meat.", image: egusiImage, position: "object-center" },
-  { name: "Ofada Rice & Sauce", description: "Local Ofada rice served with bold, deeply flavoured pepper sauce.", image: menuSpread, position: "object-[18%_82%]" },
-  { name: "Moi Moi", description: "Silky steamed bean pudding, delicately spiced and wrapped with care.", image: menuSpread, position: "object-[76%_82%]" },
-  { name: "Chicken", description: "Juicy, seasoned chicken—grilled or fried to a beautiful finish.", image: heroImage, position: "object-[62%_55%]" },
-  { name: "Beef", description: "Tender Nigerian-style beef, simmered in a rich, aromatic sauce.", image: cateringImage, position: "object-[60%_48%]" },
-  { name: "Fish", description: "Perfectly seasoned fish prepared for a flavourful, satisfying plate.", image: cateringImage, position: "object-[84%_44%]" },
+  { name: "Jollof Rice", description: "Smoky, richly seasoned party jollof cooked with our signature tomato base.", image: jollofImage },
+  { name: "Fried Rice", description: "Fragrant rice tossed with crisp vegetables and savoury Nigerian spices.", image: friedRiceImage },
+  { name: "Pounded Yam & Egusi", description: "Smooth pounded yam with hearty melon-seed soup, greens and tender meat.", image: egusiMenuImage },
+  { name: "Ofada Rice & Sauce", description: "Local Ofada rice served with bold, deeply flavoured pepper sauce.", image: ofadaImage },
+  { name: "Moi Moi", description: "Silky steamed bean pudding, delicately spiced and wrapped with care.", image: moiMoiImage },
+  { name: "Chicken", description: "Juicy, seasoned chicken—grilled or fried to a beautiful finish.", image: chickenImage },
+  { name: "Beef", description: "Tender Nigerian-style beef, simmered in a rich, aromatic sauce.", image: beefImage },
+  { name: "Fish", description: "Perfectly seasoned fish prepared for a flavourful, satisfying plate.", image: fishImage },
 ];
 
 const navItems = [
@@ -129,8 +137,8 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="menu" className="scroll-mt-20 bg-secondary/55 py-20 sm:py-28">
-        <div className="section-shell"><div className="mx-auto max-w-2xl text-center"><p className="eyebrow">From our kitchen</p><h2 className="mt-3 text-4xl font-bold text-primary sm:text-5xl">A taste of the menu</h2><p className="mt-4 leading-7 text-muted-foreground">Customer favourites, prepared fresh. Contact us for current availability, portion options, and pricing.</p></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{menuItems.map(item => <article key={item.name} className="group overflow-hidden rounded-lg border border-border/70 bg-card shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-brand"><div className="overflow-hidden"><img src={item.image} alt={item.name} width={700} height={520} loading="lazy" className={`aspect-[4/3] w-full object-cover ${item.position} transition duration-500 group-hover:scale-105`} /></div><div className="p-5"><h3 className="text-xl font-bold text-primary">{item.name}</h3><p className="mt-2 min-h-16 text-sm leading-6 text-muted-foreground">{item.description}</p><a href="#contact" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Order Now <ArrowRight size={15} /></a></div></article>)}</div><div className="mt-10 text-center"><a href="#contact" className={buttonStyles({ variant: "primary", size: "lg" })}>Ask About Today’s Menu <MessageCircle size={18} /></a></div></div>
+      <section id="menu" className="menu-pattern scroll-mt-20 py-20 sm:py-28">
+        <div className="section-shell relative"><div className="mx-auto max-w-2xl text-center"><p className="eyebrow">From our kitchen</p><h2 className="mt-3 text-4xl font-bold text-primary sm:text-5xl">A taste of the menu</h2><p className="mt-4 leading-7 text-muted-foreground">Customer favourites, prepared fresh. Contact us for current availability, portion options, and pricing.</p></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{menuItems.map(item => <article key={item.name} className="group overflow-hidden rounded-lg border border-nigerian-green/20 bg-card shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/70 hover:shadow-brand"><div className="overflow-hidden border-b-4 border-nigerian-green"><img src={item.image} alt={`${item.name} served on its own`} width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" /></div><div className="p-5"><h3 className="text-xl font-bold text-primary">{item.name}</h3><p className="mt-2 min-h-16 text-sm leading-6 text-muted-foreground">{item.description}</p><a href="#contact" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Order Now <ArrowRight size={15} /></a></div></article>)}</div><div className="mt-10 text-center"><a href="#contact" className={buttonStyles({ variant: "primary", size: "lg" })}>Ask About Today’s Menu <MessageCircle size={18} /></a></div></div>
       </section>
 
       <section id="catering" className="scroll-mt-20 py-20 sm:py-28"><div className="section-shell"><div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="eyebrow">Made for gathering</p><h2 className="mt-3 max-w-2xl text-4xl font-bold text-primary sm:text-5xl">Good food for every kind of occasion.</h2></div><a href="#contact" className={buttonStyles({ variant: "secondary" })}>Request Catering Quote <ArrowRight size={16} /></a></div><div className="mt-12 grid overflow-hidden rounded-lg border border-border bg-card shadow-soft lg:grid-cols-3">{[
